@@ -79,7 +79,7 @@
                 if (!isNaN(value) && value !== '') {
                     input.value = value; // Ensure only one character
                     if (index < inputs.length - 1) {
-                        setTimeout(() => inputs[index + 1].focus(), 50);
+                        setTimeout(() => inputs[index + 1].focused(), 50);
                     }
                 }
             });
@@ -87,7 +87,7 @@
             input.addEventListener('keydown', (e) => {
                 if (e.key === 'Backspace') {
                     if (input.value === '' && index > 0) {
-                        inputs[index - 1].focus();
+                        inputs[index - 1].focused();
                         inputs[index - 1].value = ''; // Clear previous input
                     }
                 }
@@ -102,7 +102,7 @@
                     }
                 });
                 if (chars.length >= inputs.length) {
-                    inputs[inputs.length - 1].focus();
+                    inputs[inputs.length - 1].focused();
                 }
             });
         });
