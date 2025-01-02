@@ -58,16 +58,16 @@
 </head>
 <body>
     <div class="container">
-        <h1 id="verification_heading">OTP Verification</h1>
-        <p id="verification_subtext">Please enter the 6-digit OTP sent to your mobile number.</p>
+        <h1 id="verification_heading">Verify Your Account</h1>
+        <p id="verification_subtext">We emailed you</p>
 
         <div class="code-container">
-            <input type="text" maxlength="1" class="code" />
-            <input type="text" maxlength="1" class="code" />
-            <input type="text" maxlength="1" class="code" />
-            <input type="text" maxlength="1" class="code" />
-            <input type="text" maxlength="1" class="code" />
-            <input type="text" maxlength="1" class="code" />
+            <input type="text" maxlength="1" class="code" id="code-1"/>
+            <input type="text" maxlength="1" class="code" id="code-1" />
+            <input type="text" maxlength="1" class="code" id="code-1" />
+            <input type="text" maxlength="1" class="code" id="code-1" />
+            <input type="text" maxlength="1" class="code" id="code-1" />
+            <input type="text" maxlength="1" class="code" id="code-1" />
         </div>
     </div>
 
@@ -77,7 +77,7 @@
         inputs.forEach((input, index) => {
             input.addEventListener('input', (e) => {
                 const value = e.target.value;
-                if (value && index < inputs.length - 1) {
+                if (!isNaN(value) && value !== '' && index < inputs.length - 1) {
                     inputs[index + 1].focus();
                 }
             });
